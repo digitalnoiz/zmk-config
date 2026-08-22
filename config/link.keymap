@@ -41,7 +41,7 @@ keymap {
     &trans      &kp F1  &kp F2       &kp F3      &kp F4   &kp F5                             &kp F6          &kp F7          &kp F8        &kp F9           &kp F10    &kp DEL
     &sys_reset  &trans  &trans       &trans      &trans   &trans                             &trans          &trans          &trans        &trans           &trans     &trans
     &kp LA(F4)  &trans  &kp F10      &kp F5      &kp F11  &kp F12                            &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp PSCRN  &kp INSERT
-    &kp CAPS    &trans  &trans       &kp LS(F5)  &trans   &kp LG(e)  &trans          &trans  &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans     &trans  
+    &kp CAPS    &trans  &trans       &kp LS(F5)  &trans   &kp LG(E)  &trans          &trans  &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans     &trans  
                         &bootloader  &trans      &trans   &trans     &studio_unlock  &trans  &trans          &mo 3           &trans        &trans
     >;
 
