@@ -1,0 +1,159 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+keymap {
+compatible = "zmk,keymap";
+
+default_layer {
+// ----------------------------------------------------------------------------------------------------------
+// | ESC  | 1  | 2    | 3   | 4     | 5    |                   |  6   | 7     | 8    |  9   |   0   | BKSP  |
+// | `    | Q  | W    | E   | R     | T    |                   |  Y   | U     | I    |  O   |   P   | \     |
+// | TAB  | A  | S    | D   | F     | G    |                   |  H   | J     | K    |  L   |   ;   | '     |
+// |SHIFT | Z  | X    | C   | V     | B    | MUTE  |  | PLAY   |  N   | M     | ,    |  .   |   /   | SHIFT |
+//             | LGUI | ALT | LOWER | LCTL | SPACE |  | RETURN | RALT | RAISE | RCTL | RGUI |
+bindings = <
+&kp ESC     &kp N1 &kp N2    &kp N3    &kp N4 &kp N5                           &kp N6   &kp N7 &kp N8     &kp N9    &kp N0    &kp BSPC
+&kp GRAVE   &kp Q  &kp W     &kp E     &kp R  &kp T                            &kp Y    &kp U  &kp I      &kp O     &kp P     &kp BSLH
+&kp TAB     &kp A  &kp S     &kp D     &kp F  &kp G                            &kp H    &kp J  &kp K      &kp L     &kp SEMI  &kp APOS
+&kp LSHFT   &kp Z  &kp X     &kp C     &kp V  &kp B     &kp C_MUTE  &kp C_PP   &kp N    &kp M  &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+                   &kp LGUI  &kp LALT  &mo 1  &kp LCTRL &kp SPACE   &kp RET    &kp RALT &mo 2  &kp RCTRL  &kp RGUI
+>;
+
+sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+};
+
+lower_layer {
+// ---------------------------------------------------------------------------------------------------------
+// |      | F1 | F2  | F3     | F4  | F5  |      | F6         | F7         | F8       | F9          | F10   | DEL    |
+// |      |    |     |        |     |     |      |            |            |          |             |       |        |
+// |      |    | F10 | F5     | F11 | F12 |      | LEFT_ARROW | DOWN_ARROW | UP_ARROW | RIGHT_ARROW | PSCRN | INSERT |
+// | CAPS |    |     | LS(F5) |     |     |  ||  | HOME       | PG_DN      | PG_UP    | END         |       |        |
+//             |     |        |     |     |  ||  |            |            |          |             |     
+bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+>;
+
+sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+};
+
+raise_layer {
+// ---------------------------------------------------------------------------------------------------------
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |  |
+//          |  |  |  |  |  ||  |  |  |  |  |  |
+bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+>;
+
+sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+};
+
+game_layer {
+// ---------------------------------------------------------------------------------------------------------
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |  |
+//          |  |  |  |  |  ||  |  |  |  |  |  |
+bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+>;
+
+sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+};
+
+game_raise_layer {
+// ---------------------------------------------------------------------------------------------------------
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |  |
+//          |  |  |  |  |  ||  |  |  |  |  |  |
+bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+>;
+
+sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+};
+
+first_extra_layer {
+// ---------------------------------------------------------------------------------------------------------
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |  |
+//          |  |  |  |  |  ||  |  |  |  |  |  |
+bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+>;
+
+sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+}
+
+second_extra_layer {
+// ---------------------------------------------------------------------------------------------------------
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |  |
+//          |  |  |  |  |  ||  |  |  |  |  |  |
+bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+>;
+
+sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+}
+
+third_extra_layer {
+// ---------------------------------------------------------------------------------------------------------
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |            |  |  |  |  |  |  |
+// |  |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |  |
+//          |  |  |  |  |  ||  |  |  |  |  |  |
+bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+>;
+
+sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+}
+};
+};
