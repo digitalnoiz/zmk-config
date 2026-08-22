@@ -24,7 +24,7 @@ keymap {
     &kp GRAVE   &kp Q  &kp W     &kp E     &kp R  &kp T                            &kp Y    &kp U  &kp I      &kp O     &kp P     &kp BSLH
     &kp TAB     &kp A  &kp S     &kp D     &kp F  &kp G                            &kp H    &kp J  &kp K      &kp L     &kp SEMI  &kp APOS
     &kp LSHFT   &kp Z  &kp X     &kp C     &kp V  &kp B     &kp C_MUTE  &kp C_PP   &kp N    &kp M  &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                    &kp LGUI  &kp LALT  &mo 1  &kp LCTRL &kp SPACE   &kp RET    &kp RALT &mo 2  &kp RCTRL  &kp RGUI
+                       &kp LGUI  &kp LALT  &mo 1  &kp LCTRL &kp SPACE   &kp RET    &kp RALT &mo 2  &kp RCTRL  &kp RGUI
     >;
 
     sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -42,7 +42,7 @@ keymap {
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                    &trans  &trans  &trans  &trans  &studio_unlock  &trans  &trans  &trans  &trans  &trans
     >;
 
     sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
