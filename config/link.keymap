@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
+ * Copyright (c) 2026 Gomidroid Productions LLC
  *
  * SPDX-License-Identifier: MIT
  */
@@ -13,12 +13,12 @@ keymap {
     compatible = "zmk,keymap";
 
     default_layer {
-    // ----------------------------------------------------------------------------------------------------------
-    // | ESC  | 1  | 2    | 3   | 4     | 5    |                   |  6   | 7     | 8    |  9   |   0   | BKSP  |
-    // | `    | Q  | W    | E   | R     | T    |                   |  Y   | U     | I    |  O   |   P   | \     |
-    // | TAB  | A  | S    | D   | F     | G    |                   |  H   | J     | K    |  L   |   ;   | '     |
-    // |SHIFT | Z  | X    | C   | V     | B    | MUTE  |  | PLAY   |  N   | M     | ,    |  .   |   /   | SHIFT |
-    //             | LGUI | ALT | LOWER | LCTL | SPACE |  | RETURN | RALT | RAISE | RCTL | RGUI |
+    // --------------------------------------------------------------------------------------------------------
+    // | ESC  | 1  | 2    | 3   | 4     | 5    |                 |  6   | 7     | 8    |  9   |   0   | BKSP  |
+    // | `    | Q  | W    | E   | R     | T    |                 |  Y   | U     | I    |  O   |   P   | \     |
+    // | TAB  | A  | S    | D   | F     | G    |                 |  H   | J     | K    |  L   |   ;   | '     |
+    // |SHIFT | Z  | X    | C   | V     | B    | MUTE  || PLAY   |  N   | M     | ,    |  .   |   /   | SHIFT |
+    //             | LGUI | ALT | LOWER | LCTL | SPACE || RETURN | RALT | RAISE | RCTL | RGUI |
     bindings = <
     &kp ESC     &kp N1 &kp N2    &kp N3    &kp N4 &kp N5                           &kp N6   &kp N7 &kp N8     &kp N9    &kp N0    &kp BSPC
     &kp GRAVE   &kp Q  &kp W     &kp E     &kp R  &kp T                            &kp Y    &kp U  &kp I      &kp O     &kp P     &kp BSLH
@@ -31,86 +31,86 @@ keymap {
     };
 
     lower_layer {
-    // ---------------------------------------------------------------------------------------------------------
-    // |      | F1 | F2  | F3     | F4  | F5  |      | F6         | F7         | F8       | F9          | F10   | DEL    |
-    // |      |    |     |        |     |     |      |            |            |          |             |       |        |
-    // |      |    | F10 | F5     | F11 | F12 |      | LEFT_ARROW | DOWN_ARROW | UP_ARROW | RIGHT_ARROW | PSCRN | INSERT |
-    // | CAPS |    |     | LS(F5) |     |     |  ||  | HOME       | PG_DN      | PG_UP    | END         |       |        |
-    //             |     |        |     |     |  ||  |            |            |          |             |     
+    // ------------------------------------------------------------------------------------------------------------------------
+    // |      | F1 | F2  | F3     | F4  | F5  |           | F6         | F7         | F8       | F9          | F10   | DEL    |
+    // | rset |    |     |        |     |     |           |            |            |          |             |       |        |
+    // | Clse |    | F10 | F5     | F11 | F12 |           | LEFT_ARROW | DOWN_ARROW | UP_ARROW | RIGHT_ARROW | PSCRN | INSERT |
+    // | CAPS |    |     | LS(F5) |     | Brz |       ||  | HOME       | PG_DN      | PG_UP    | END         |       |        |
+    //             |     | boot   | *   |     | ulock ||  |            | Lyr 3      |          |             |     
     bindings = <
-    &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                    &trans  &trans  &trans  &trans  &studio_unlock  &trans  &mo 3   &trans  &trans  &trans
+    &trans      &kp F1  &kp F2       &kp F3      &kp F4   &kp F5                             &kp F6          &kp F7          &kp F8        &kp F9           &kp F10    &kp DEL
+    &sys_reset  &trans  &trans       &trans      &trans   &trans                             &trans          &trans          &trans        &trans           &trans     &trans
+    &kp LA(F4)  &trans  &kp F10      &kp F5      &kp F11  &kp F12                            &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp PSCRN  &kp INSERT
+    &kp CAPS    &trans  &trans       &kp LS(F5)  &trans   &kp LG(e)  &trans          &trans  &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &trans     &trans  
+                        &bootloader  &trans      &trans   &trans     &studio_unlock  &trans  &trans          &mo 3           &trans        &trans
     >;
 
     sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
     };
 
     raise_layer {
-    // ---------------------------------------------------------------------------------------------------------
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |  |
-    //          |  |  |  |  |  ||  |  |  |  |  |  |
+    // ----------------------------------------------------------------------------
+    // |  |        |      |      |       |      |      |   |   |   | ( | ) |      |
+    // |  |BT 1    | BT 2 | BT 3 | BT 4  | BT 5 |      |   |   |   | { | } | RSet |
+    // |  |        |      |      |       |      |      | + | - |   | [ | ] |      |
+    // |  | BT_CLR |      |      |       |      |  ||  | = | _ |   |   |   |      |
+    //             |      |      | Lyr 3 |      |  ||  |   | * |   |   |
     bindings = <
-    &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+    &trans  &trans        &trans        &trans        &trans        &trans                       &trans        &trans          &trans  &kp LPAR  &kp RPAR  &trans
+    &trans  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5                 &trans        &trans          &trans  &kp LBRC  &kp RBRC  &sys_reset
+    &trans  &trans        &trans        &trans        &trans        &trans                       &kp KP_PLUS   &kp KP_MINUS    &trans  &kp LBKT  &kp RBKT  &trans
+    &trans  &bt BT_CLR    &trans        &trans        &trans        &trans       &trans  &trans  &kp KP_EQUAL  &kp UNDERSCORE  &trans  &kp LT    &kp GT    &trans
+                          &trans        &trans        &mo 3         &trans       &trans  &trans  &trans  &trans  &trans  &trans
+    >;
+
+    sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+    };
+
+    extra_layer {
+    // ---------------------------------------------------------------------------------------------------
+    // |  |  |  |  |  |  |      |  |  |  |  |  | Game |
+    // |  |  |  |  |  |  |      |  |  |  |  |  |      |
+    // |  |  |  |  |  |  |      |  |  |  |  |  |      |
+    // |  |  |  |  |  |  |  ||  |  |  |  |  |  |      |
+    //          |  |  |  |  ||  |  |  |  |  |
+    bindings = <
+    &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &tog 3
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                    &trans  &trans  &mo 3   &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
     >;
 
     sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
     };
 
     game_layer {
-    // ---------------------------------------------------------------------------------------------------------
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |  |
-    //          |  |  |  |  |  ||  |  |  |  |  |  |
+    // --------------------------------------------------------------------------------------------------
+    // |  |  |  |  |  |  |     |  |       |  |  |  |  |
+    // |  |  |  |  |  |  |     |  |       |  |  |  |  |
+    // |  |  |  |  |  |  |     |  |       |  |  |  |  |
+    // |  |  |  |  |  |  | ||  |  |       |  |  |  |  |
+    //          |  |  |  | ||  |  | GameR |  |  |
     bindings = <
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mo 4   &trans  &trans
     >;
 
     sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
     };
 
     game_raise_layer {
-    // ---------------------------------------------------------------------------------------------------------
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |  |
-    //          |  |  |  |  |  ||  |  |  |  |  |  |
+    // ---------------------------------------------------------------------------------------------------
+    // |  |  |  |  |  |  |      |  |   |  |  |  | Type |
+    // |  |  |  |  |  |  |      |  |   |  |  |  |      |
+    // |  |  |  |  |  |  |      |  |   |  |  |  |      |
+    // |  |  |  |  |  |  |  ||  |  |   |  |  |  |      |
+    //          |  |  |  |  ||  |  | * |  |  |
     bindings = <
-    &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-    >;
-
-    sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
-    };
-
-    first_extra_layer {
-    // ---------------------------------------------------------------------------------------------------------
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |  |
-    //          |  |  |  |  |  ||  |  |  |  |  |  |
-    bindings = <
-    &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+    &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &tog 0
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -121,12 +121,12 @@ keymap {
     };
 
     second_extra_layer {
-    // ---------------------------------------------------------------------------------------------------------
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |  |
-    //          |  |  |  |  |  ||  |  |  |  |  |  |
+    // ---------------------------------------------------------------------------------------------------
+    // |  |  |  |  |  |  |      |  |  |  |  |  |  |
+    // |  |  |  |  |  |  |      |  |  |  |  |  |  |
+    // |  |  |  |  |  |  |      |  |  |  |  |  |  |
+    // |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |
+    //          |  |  |  |  ||  |  |  |  |  |
     bindings = <
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
@@ -139,12 +139,12 @@ keymap {
     };
 
     third_extra_layer {
-    // ---------------------------------------------------------------------------------------------------------
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |            |  |  |  |  |  |  |
-    // |  |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |  |
-    //          |  |  |  |  |  ||  |  |  |  |  |  |
+    // ---------------------------------------------------------------------------------------------------
+    // |  |  |  |  |  |  |      |  |  |  |  |  |  |
+    // |  |  |  |  |  |  |      |  |  |  |  |  |  |
+    // |  |  |  |  |  |  |      |  |  |  |  |  |  |
+    // |  |  |  |  |  |  |  ||  |  |  |  |  |  |  |
+    //          |  |  |  |  ||  |  |  |  |  |
     bindings = <
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
